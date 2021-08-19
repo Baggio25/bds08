@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #334ac3;
+  --secondary-color: #e5e5e5;
+  --grey-color: #8d8d8d;
+  --white-color: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--grey-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.base-card {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
