@@ -1,9 +1,8 @@
 .sales-by-gender-container {
-  padding: 40px 50px 90px 15px;
+  padding: 40px 50px 60px 15px;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .sales-by-gender-text {
@@ -21,4 +20,9 @@
 
 .sales-by-gender-chart {
   margin-top: 52px;
+}
+
+.apexcharts-legend.apexcharts-align-center {
+  flex-direction: column;
+  align-items: center;
 }

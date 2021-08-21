@@ -5,6 +5,14 @@
   align-items: center;
 }
 
+.filter-form {
+  width: 260px;
+}
+
+.filter-store-container {
+  width: 100%;
+}
+
 .filter-select-store {
   height: 50px;
   width: 270px;

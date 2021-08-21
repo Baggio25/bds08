@@ -15,7 +15,7 @@ export const buildPieChartConfig = (labels: string[] = [], name: string) => {
         fontFamily: 'Roboto, sans-serif'
       }
     },
-    colors: ['#3e82f7', '#04d182', '#ffc107', '#ff6b72'],
+    colors: ['#FF7A00', '#7234F5', '#FF0000'],
     legend: {
       show: true,
       floating: false,
@@ -24,20 +24,26 @@ export const buildPieChartConfig = (labels: string[] = [], name: string) => {
       labels: {
         colors: ['#b4bed2']
       },
-      fontFamily: 'Roboto, sans-serif',
+      fontFamily: 'Ubuntu, sans-serif',
       fontSize: '18px',
       itemMargin: {
         vertical: 1
       }
     },
     dataLabels: {
-      enabled: false
+      enabled: true,
+      style: {
+        fontSize: '10px',
+        fontFamily: 'Helvetica, Arial, sans-serif',
+        fontWeight: 'bold',
+        colors: ['#fff']
+      }
     },
     plotOptions: {
       pie: {
         size: 400,
         donut: {
-          size: '65%',
+          size: '58%',
           labels: {
             show: true,
             name: {
