@@ -1,16 +1,12 @@
-import React, { useCallback, useEffect } from 'react';
-
-import './styles.css';
-
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Select from 'react-select';
-import { Store } from '../../types/store';
-import { useState } from 'react';
+import { Store } from '../../types';
 import { makeRequest } from '../../utils/request';
-import { AxiosRequestConfig } from 'axios';
+import './styles.css';
 
 export type StoreFilterData = {
-  store: Store | null;
+  storeId: number | null;
 };
 
 type Props = {
@@ -25,10 +21,14 @@ const Filter = ({ onSubmitFilter }: Props) => {
     onSubmitFilter(formData);
   };
 
-  const handleChangeGenre = (value: Store) => {
-    setValue('store', value);
+  const handleChangeStore = (value: Store) => {
+    if (value) {
+      setValue('storeId', value.id);
+    } else {
+      setValue('storeId', 0);
+    }
     const obj: StoreFilterData = {
-      store: getValues('store')
+      storeId: getValues('storeId')
     };
 
     onSubmitFilter(obj);
@@ -55,7 +55,7 @@ const Filter = ({ onSubmitFilter }: Props) => {
               classNamePrefix="filter-select-store"
               isClearable
               placeholder="Loja"
-              onChange={(value) => handleChangeGenre(value as Store)}
+              onChange={(value) => handleChangeStore(value as Store)}
               getOptionLabel={(store: Store) => store.name}
               getOptionValue={(store: Store) => String(store.id)}
             />

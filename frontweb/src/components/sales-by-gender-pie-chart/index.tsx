@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
+import { Gender } from '../../types';
 import { buildPieChartConfig } from './helpers';
 import './styles.css';
 
 type Props = {
-  labels: string[];
+  labels?: Gender[];
   name: string;
-  series: number[];
+  series?: number[];
 };
 
-const SalesByGenderPieChart = ({ labels, name, series }: Props) => {
+const SalesByGenderPieChart = ({ labels = [], name, series = [] }: Props) => {
   return (
     <div>
       <ReactApexChart
