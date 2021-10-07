@@ -3,3 +3,21 @@
   height: 130px;
   padding: 40px 15px;
 }
+
+@media (min-width: 576px) {
+  .filter-card {
+    width: 496px;
+  }
+}
+
+@media (min-width: 768px) {
+  .filter-card {
+    width: 688px;
+  }
+}
+
+@media (min-width: 992px) {
+  .filter-card {
+    width: 960px;
+  }
+}

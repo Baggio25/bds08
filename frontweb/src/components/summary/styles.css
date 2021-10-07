@@ -4,3 +4,22 @@
   padding: 40px 15px;
   margin-top: 10px;
 }
+
+@media (min-width: 576px) {
+  .summary-card {
+    width: 496px;
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .summary-card {
+    width: 688px;
+  }
+}
+
+@media (min-width: 992px) {
+  .summary-card {
+    width: 960px;
+  }
+}
