@@ -1,10 +1,17 @@
 import "./App.css";
+import Filter from "./components/filter";
+import Header from "./components/header";
+import Summary from "./components/summary";
 
 function App() {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <>
+      <Header />
+      <div className="app-container">
+        <Filter />
+        <Summary />
+      </div>
+    </>
   );
 }
 
