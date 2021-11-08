@@ -1,9 +1,49 @@
+import { useCallback, useEffect, useState } from "react";
+import Select from "react-select";
+
+import { makeRequest } from "../../utils/requests";
+import { FilterData, Store } from "../../utils/types";
 import "./styles.css";
 
-export default function Filter() {
+type Props = {
+  onFilterChange: (filter: FilterData) => void;
+}
+
+const Filter = ({ onFilterChange }: Props) => {
+
+  const [stores, setStores] = useState<Store[]>([]);
+
+  const getStores = useCallback(() => {
+    makeRequest.get('/stores').then((response) => {
+      setStores(response.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    getStores();
+  }, [getStores]);
+
+  const handleChangeStore = (value?: Store) => {
+    const selectedStore = value as Store;
+    console.log(selectedStore);
+    onFilterChange({ store: selectedStore });
+  };
+
   return (
     <>
-      <div className="filter-card base-card">FILTRO</div>
+      <div className="filter-card base-card">
+        <Select
+          options={stores}
+          classNamePrefix="store-select"
+          isClearable
+          placeholder="Selecione uma loja"
+          getOptionLabel={(store) => store.name}
+          getOptionValue={(store) => String(store.id)}
+          onChange={(value) => handleChangeStore(value as Store)}
+        />
+      </div>
     </>
   );
 }
+
+export default Filter;

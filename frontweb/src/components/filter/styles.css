@@ -1,19 +1,31 @@
 .filter-card {
-  width: 300px;
+  width: 100%;
   height: 130px;
   padding: 40px 15px;
 }
 
-@media (min-width: 576px) {
-  .filter-card {
-    width: 496px;
-  }
+.store-select__control {
+  width: 260px;
+  height: 50px;
+  border: 1px solid #fff;
+  color: var(ligth-color) !important;
 }
 
-@media (min-width: 768px) {
-  .filter-card {
-    width: 688px;
-  }
+.store-select__indicator-separator {
+  display: none;
+}
+
+.store-select__placeholder {
+  color: var(ligth-color) !important;
+  font-size: 16px;
+}
+
+.store-select__control--is-focused {
+  box-shadow: none;
+}
+
+.store-select__single-value {
+  color: var(ligth-color) !important;
 }
 
 @media (min-width: 992px) {

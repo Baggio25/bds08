@@ -1,25 +1,59 @@
-.summary-card {
-  width: 300px;
+.summary-card-container {
+  width: 100%;
   height: 517px;
   padding: 40px 15px;
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sumary-card-total-sum {
+  margin-left: 25px;
+}
+
+.sumary-card-total-sum-value {
+  color: #334ac3;
+  font-weight: bold;
+}
+
+.sumary-card-total-title {
+  color: #8d8d8d;
+  font-size: 18px;
+  margin: 0;
+}
+
+.sumary-card-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.apexcharts-legend.apexcharts-align-center {
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (min-width: 576px) {
-  .summary-card {
-    width: 496px;
+  .summary-card-container {
     margin-top: 40px;
   }
-}
 
-@media (min-width: 768px) {
-  .summary-card {
-    width: 688px;
+  .sumary-card-total-sum {
+    margin-left: 40px;
   }
 }
 
 @media (min-width: 992px) {
-  .summary-card {
+  .summary-card-container {
+    flex-direction: row;
+    align-content: space-between;
+    align-items: center;
     width: 960px;
+  }
+
+  .sumary-card-chart {
+    flex: 1;
+    margin-top: 0px;
   }
 }
