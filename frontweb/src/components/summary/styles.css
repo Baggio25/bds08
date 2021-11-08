@@ -50,6 +50,7 @@
     align-content: space-between;
     align-items: center;
     width: 960px;
+    margin-bottom: 50px;
   }
 
   .sumary-card-chart {
